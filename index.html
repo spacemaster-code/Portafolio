@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Portafolio - Mendez Matias Mauricio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body>
+    <!-- Seccion de arriba -->
+    <header class="cabecera">
+        <div class="titulo">
+            <h1>Mendez Matias</h1>
+
+            <nav class="direcciones">   
+                <ul>    
+                    <li><a href="#Sobre-mi" class="direc">Sobre mi</a></li>
+                    <li><a href="#Proyectos" class="direc">Proyectos</a></li>
+                    <li><a href="#Tecnologias" class="direc">Tecnologias</a></li>
+                    <li><a href="#Contacto" class="direc">Contacto</a></li>
+                </ul>   
+            </nav>
+
+            <button class="btn-lateral" id="btnMenu" aria-label="Abrir menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            
+            <aside class="sidebar" id="sidebar">
+                <button class="btn-cerrar desactivado" id="btnCerrar">x</button>
+                
+                <nav class="direcciones-celular">
+                    <ul>
+                        <li><a href="#Sobre-mi" class="direc1">Sobre mi</a></li>
+                        <li><a href="#Proyectos" class="direc1">Proyectos</a></li>
+                        <li><a href="#Tecnologias" class="direc1">Tecnologias</a></li>
+                        <li><a href="#Contacto" class="direc1">Contacto</a></li>
+                    </ul>
+                </nav>
+            </aside>
+        </div>
+    </header>
+        
+    <!-- Seccion del cuerpo -->
+    <main>
+        <section id="Sobre-mi">
+            <div class="contenedor-imagen">
+                <img src="./img/exactas.jpg" alt="Perfil" width="300" height="300" id="perfil">
+            </div>
+            
+            
+            <div class="contenido">
+                <h2>Sobre mi</h2>
+                
+                <p>
+                    
+                    Soy estudiante de tercer año de la Licenciatura en Análisis de Sistemas en la Universidad Nacional de Salta (UNSa). 
+                    <br>
+                    Me gusta el desarrollo Backend y la arquitectura de software, enfocándome en la creación de sistemas robustos y eficientes con Java.
+                    <br>
+                    Mi perfil incluye el diseño y gestión de bases de datos SQL, además del uso de herramientas como Docker y Git. 
+                    <br>
+                    Actualmente me dedico a aprender construyendo proyectos reales, integrando la lógica backend y la persistencia de datos para desarrollar soluciones funcionales, escalables y creativas.
+                    
+                </p>
+                
+            </div>
+        </section>
+
+        
+
+        <section id="Proyectos">
+            <h2>Proyectos</h2>
+
+            <article class="tarjeta">
+                <h3>Mi pagina "sobre mi"</h3>
+                <p>
+                    Mi primera pagina web, hecha en HTML en la clase 1. Tiene encabezados
+                    parrafos, listas, una imagen y enlaces.
+                </p>
+                <p>Tecnologias: HTML</p>
+                <a href="introduccion.html">Ir al proyecto</a>
+
+            </article>
+
+            <article class="tarjeta">
+                <h3>Aleph: Interprete en C</h3>
+                <p>El sitio que estas viendo suma etiqeutas semanticas de HTML5, una tabla y un formulario de contacto</p>
+
+                
+            </article>
+
+            <article class="tarjeta">
+                <h3>Infrastructura de 3 capas</h3>
+                <p>
+                    Cree
+                </p>
+                <p>Tecnologias: Google Cloud Platform</p>
+
+            </article>
+
+        </section>
+
+        <section id="Tecnologias">
+            <h2>Tecnologias</h2>
+            
+            <div class="tarjetas-juntas">
+                <article class="tarjeta-solas">
+                    <img src="./img/html.svg" alt="javascript">
+                    <div class="info">
+                        <h3>HTML</h3>
+                    </div>
+                </article>
+                
+                <article class="tarjeta-solas">
+                    <img src="./img/css.svg" alt="css">
+                    <div class="info">
+                        <h3>CSS</h3>
+                    </div>
+                </article>
+
+                <article class="tarjeta-solas">
+                    <img src="./img/javascript.svg" alt="javascript">
+                    <div class="info">
+                        <h3>JavaScript</h3>
+                    </div>
+                </article>
+
+                <article class="tarjeta-solas">
+                    <img src="./img/docker.svg" alt="docker">
+                    <div class="info">
+                        <h3>Docker</h3>
+                    </div>
+                </article>
+
+                <article class="tarjeta-solas">
+                   <img src="./img/git.svg" alt="git">
+                    <div class="info">
+                        <h3>Git</h3>
+                    </div>
+                </article>
+
+                <article class="tarjeta-solas">
+                   <img src="./img/java.svg" alt="java">
+                    <div class="info">
+                        <h3>Java</h3>
+                    </div>
+                </article>
+
+                <article class="tarjeta-solas">
+                   <img src="./img/postgresql.svg" alt="postgresql">
+                    <div class="info">
+                        <h3>Postgresql</h3>
+                    </div>
+                </article>
+
+            </div>
+        
+        </section>
+
+
+        <section id="Contacto">
+            <form id="formu" class="formulario">
+
+                <h2 class="contac">Contacto</h2>
+                
+                <div class="campo">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" id="apellido" placeholder="Tu apellido" name="apellido" required>
+                </div>
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre" placeholder="Tu nombre" name="nombre" required>
+                </div>
+
+                <div class="campo">
+                    <label for="email">Correo electronico</label>
+                    <input type="email" id="email" placeholder="Tu correo" name="email" required>
+                </div>
+
+                <div class="campo">
+                    <label for="telefono">Telefono</label>
+                    <input type="text" id="telefono" placeholder="+54 ..." name="telefono" required>
+                </div>
+
+                <div class="campo asunto">
+                    <label for="asunto">Asunto:</label>
+                    <select name="asunto" id="asunto">
+                        <option value="Consulta">Consulta</option>
+                        <option value="Propuesta de trabajo">Propuesta de trabajo</option>
+                    </select>
+                </div>
+            
+                <div class="campo mensaje">
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea name="mensaje" id="mensaje" rows="3" cols="20" placeholder="Mensaje" required></textarea>
+                </div>
+                
+                <div class="campo botones">
+                    <button type="submit" id="envio">Enviar mensaje</button>
+                </div>
+            </form>
+            
+        </section>
+    </main>
+
+    <!-- Seccion de abajo -->
+    <footer class="pie-pagina">
+        <p>&copy Copyright Mendez Matias - 2026</p>
+        <p><a href="https://exactas.unsa.edu.ar/">Ciencias Exactas - UNSa</a></p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
+    <script src="js/script.js" defer></script>
+</body>
