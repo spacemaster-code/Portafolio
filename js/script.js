@@ -1,7 +1,6 @@
 
 /* Envio de correos */
-
-
+ 
 emailjs.init("JjLxS8FyYBOgVv9Dg");
 
 const formulario = document.getElementById("formu");
@@ -17,20 +16,24 @@ const boton = document.getElementById('envio');
 formulario.addEventListener("submit", function(e) {
     e.preventDefault();
     boton.textContent = 'Enviando...';
-    boton.disabled = false;
+    boton.disabled = true;
+
+    if(telefono.value == null){
+        telefono.value = "Sin numero";
+    } 
 
     emailjs.sendForm('service_ujyw04e', 'template_i2ajg11', this)
     .then(() => {
         alert('¡Correo enviado con éxito!');
-        form.reset();
+        formulario.reset();
     })
     .catch((err) => {
         alert('Error al enviar el correo. Por favor intenta de nuevo.');
         console.error('EmailJS Error:', err);
     })
     .finally(() => {
-        btn.disabled = false;
-        btn.textContent = 'Enviar';
+        boton.disabled = false;
+        boton.textContent = 'Enviar';
     });
 });
 
@@ -85,7 +88,45 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 
         if(seccion) {
             seccion.scrollIntoView({ behavior: 'smooth' });
-
         }
+    });
+});
+
+
+/* Copiado */
+const etiquetasCopiar = document.querySelectorAll('.btn-copiar');
+const mostrar = document.querySelector(".notificacion");
+const texto = mostrar.querySelector("p");
+let bandera = null;
+
+etiquetasCopiar.forEach(boton => {
+    boton.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (bandera) {
+            clearTimeout(bandera);
+        }
+        
+        const textoACopiar = boton.getAttribute('data');
+        texto.textContent = "copiado";
+        mostrar.classList.add('mostrar');
+
+        navigator.clipboard.writeText(textoACopiar)
+        .then(() => {
+            bandera = setTimeout(() => {
+                mostrar.classList.remove('mostrar');
+            }, 2000);
+        })
+        .catch(err => {
+            console.error("No se copio.", err);
+            bandera = setTimeout(() => {
+                mostrar.classList.remove('mostrar');
+            }, 2000);
+        });
+
+       /*  bandera = setTimeout(() => {
+            mostrar.classList.remove('mostrar');   
+        }, 2000); */
+
     });
 });

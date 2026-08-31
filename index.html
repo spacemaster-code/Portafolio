@@ -5,7 +5,15 @@
     <title>Portafolio - Mendez Matias Mauricio</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+    />
 </head>
 
 
@@ -13,7 +21,7 @@
     <!-- Seccion de arriba -->
     <header class="cabecera">
         <div class="titulo">
-            <h1>Mendez Matias</h1>
+            <h1>Mendez Matias Mauricio</h1>
 
             <nav class="direcciones">   
                 <ul>    
@@ -48,6 +56,9 @@
         
     <!-- Seccion del cuerpo -->
     <main>
+        <div class="notificacion">
+            <p></p>
+        </div>
         <section id="Sobre-mi">
             <div class="contenedor-imagen">
                 <img src="./img/exactas.jpg" alt="Perfil" width="300" height="300" id="perfil">
@@ -61,11 +72,11 @@
                     
                     Soy estudiante de tercer año de la Licenciatura en Análisis de Sistemas en la Universidad Nacional de Salta (UNSa). 
                     <br>
-                    Me gusta el desarrollo Backend y la arquitectura de software, enfocándome en la creación de sistemas robustos y eficientes con Java.
+                    Me gusta el desarrollo Backend y la arquitectura de software, enfocándome en la creación de sistemas con Java.
                     <br>
                     Mi perfil incluye el diseño y gestión de bases de datos SQL, además del uso de herramientas como Docker y Git. 
                     <br>
-                    Actualmente me dedico a aprender construyendo proyectos reales, integrando la lógica backend y la persistencia de datos para desarrollar soluciones funcionales, escalables y creativas.
+                    Actualmente me dedico a aprender mediante la creacion de proyectos reales, integrando la lógica backend y la persistencia de datos para desarrollar soluciones funcionales, escalables y creativas.
                     
                 </p>
                 
@@ -75,39 +86,60 @@
         
 
         <section id="Proyectos">
-            <h2>Proyectos</h2>
-
-            <article class="tarjeta">
-                <h3>Mi pagina "sobre mi"</h3>
-                <p>
-                    Mi primera pagina web, hecha en HTML en la clase 1. Tiene encabezados
-                    parrafos, listas, una imagen y enlaces.
-                </p>
-                <p>Tecnologias: HTML</p>
-                <a href="introduccion.html">Ir al proyecto</a>
-
-            </article>
+            <div class="top-proyectos-tittle">
+                <h2>Proyectos</h2>
+            </div>
 
             <article class="tarjeta">
                 <h3>Aleph: Interprete en C</h3>
-                <p>El sitio que estas viendo suma etiqeutas semanticas de HTML5, una tabla y un formulario de contacto</p>
+                <!-- <p>Aleph es un intérprete de lenguaje de programación creado con herramientas de análisis léxico y sintáctico (Flex y Bison).
+En el proyecto desarrolle la lógica para tipos de datos abstractos complejos (conjunto, lista y elemento), junto con sus operaciones y operadores correspondientes, creando una estructura especial recursiva que encapsula a los tres tipos de datos y creando funciones alrededor de esta.
+Durante el desarrollo lleve a cabo decisiones por etapas organizadas: la parte léxica, el diseño de la sintaxis y al final la implementación de la semántica del lenguaje. El principal desafío fue el diseño de la sintaxis, buscando representar de forma clara las operaciones entre los nuevos tipos de datos.</p>
+                 -->
+                <p>
+                    Intérprete de lenguaje desarrollado con herramientas de análisis léxico y sintáctico (Flex y Bison).<br> 
+                    Diseñé e implementé la sintaxis, el léxico y la semántica del lenguaje, creando una estructura recursiva personalizada para gestionar tipos de datos abstractos complejos (conjuntos, listas y elementos) y sus operaciones.
+                </p>
+                <div class="etiquetas-pro">
+                    <span><strong>C</strong></span>
+                    <span><strong>Flex</strong></span>
+                    <span><strong>Bison</strong></span>
+                </div>
+            </article>
 
-                
+            <article class="tarjeta">
+                <h3>Portafolio Web</h3>
+                <p">
+                    Pagina web que funciona como carta de presentacion. Fue hecha en html, css y javascript.<br>
+                    Durante su creacion se tuvo en cuenta la experiencia del usuario, por lo que resulto en una pagina sencilla que permite al cliente acceder
+                    a las distintas partes de manera rapida y sencilla, separandola en cuatro secciones importantes: Sobre mi, Proyectos, Tecnologias y Contacto.
+                    Tambien se utilizo un servicio de correo externo que permite al usuario comincarse desde la pagina.
+                </p>
+                <div class="etiquetas-pro">
+                    <span><strong>HTML</strong></span>
+                    <span><strong>CSS</strong></span>
+                    <span><strong>Javascript</strong></span>
+                </div>
             </article>
 
             <article class="tarjeta">
                 <h3>Infrastructura de 3 capas</h3>
                 <p>
-                    Cree
+                    Durante un curso se implemento en nube una arquitectura de tres capas en Google Cloud Platform. <br>
+                    Cree una VPC con una subred pública y una subred privada para controlar la exposición de los servicios. Configuré reglas de firewall siguiendo el principio de mínimo privilegio y desplegué un servidor web en la subred pública y un servidor de base de datos en la subred privada, con Route y NAT Cloud para descargar los paquetes necesarios.
+                    La comunicación entre aplicación y base de datos se realizó mediante IPs internas, evitando exponer directamente la base de datos a Internet.
                 </p>
-                <p>Tecnologias: Google Cloud Platform</p>
-
+                <div class="etiquetas-pro">
+                    <span><strong>Google Cloud Platform</strong></span>
+                </div>
             </article>
 
         </section>
 
         <section id="Tecnologias">
-            <h2>Tecnologias</h2>
+            <div class="top-tecnologias-tittle">
+                <h2>Tecnologias</h2>
+            </div>
             
             <div class="tarjetas-juntas">
                 <article class="tarjeta-solas">
@@ -159,6 +191,15 @@
                     </div>
                 </article>
 
+                <article class="tarjeta-solas">
+                    <img src="https://api.iconify.design/simple-icons/springboot.svg?color=%236DB33F" alt="Spring Boot"  width="32" height="32" class="spring"/>
+                    <div class="info">
+                        <h3>SpringBoot</h3>
+                    </div>
+                </article>
+
+                
+                
             </div>
         
         </section>
@@ -166,8 +207,26 @@
 
         <section id="Contacto">
             <form id="formu" class="formulario">
+                <div class="top-contacto-tittle">
+                    <h2 class="contac">Contacto</h2>
+                </div>
+                <div class="externo">
 
-                <h2 class="contac">Contacto</h2>
+                    <a href="https://github.com/spacemaster-code" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                  
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/mendez-matias-mauricio" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin"></i>
+                    </a>
+                  
+                    <!-- Email (Abre la app de correo del dispositivo) -->
+                    <a href="mendez.matias.m3@gmail.com" aria-label="Enviar Correo" data="mendez.matias.m3@gmail.com" class="btn-copiar">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                    
+                </div>
                 
                 <div class="campo">
                     <label for="apellido">Apellido</label>
@@ -186,7 +245,7 @@
 
                 <div class="campo">
                     <label for="telefono">Telefono</label>
-                    <input type="text" id="telefono" placeholder="+54 ..." name="telefono" required>
+                    <input type="text" id="telefono" placeholder="Opcional" name="telefono" >
                 </div>
 
                 <div class="campo asunto">
