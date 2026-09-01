@@ -1,5 +1,7 @@
 
-/* Envio de correos */
+/* 
+Envio de correo
+*/
  
 emailjs.init("JjLxS8FyYBOgVv9Dg");
 
@@ -15,64 +17,73 @@ const boton = document.getElementById('envio');
 
 formulario.addEventListener("submit", function(e) {
     e.preventDefault();
-    boton.textContent = 'Enviando...';
-    boton.disabled = true;
 
-    if(telefono.value == null){
-        telefono.value = "Sin numero";
+    if(telefono.value.length > 10){
+        telefono.setCustomValidity("Coloque un numero valido.");
+        telefono.reportValidity();
     } 
-
-    emailjs.sendForm('service_ujyw04e', 'template_i2ajg11', this)
-    .then(() => {
-        alert('¡Correo enviado con éxito!');
-        formulario.reset();
-    })
-    .catch((err) => {
-        alert('Error al enviar el correo. Por favor intenta de nuevo.');
-        console.error('EmailJS Error:', err);
-    })
-    .finally(() => {
-        boton.disabled = false;
-        boton.textContent = 'Enviar';
-    });
+    else {
+        boton.textContent = 'Enviando...';
+        boton.disabled = true;
+        
+        if(telefono.value == "") { telefono.value = "Sin numero"; }
+        
+        emailjs.sendForm('service_ujyw04e', 'template_i2ajg11', this)
+        .then(() => {
+            alert('¡Correo enviado con éxito!');
+            formulario.reset();
+        })
+        .catch((err) => {
+            alert('Error al enviar el correo. Por favor intenta de nuevo.');
+            console.error('EmailJS Error:', err);
+        })
+        .finally(() => {
+            boton.disabled = false;
+            boton.textContent = 'Enviar';
+        });
+        telefono.value = "";
+        telefono.setCustomValidity("");
+    }
+    
 });
 
+telefono.addEventListener('input', () => {
+    telefono.setCustomValidity("");
+});
 
-/* Barra lateral */
+/* 
+Control de la barra lateral
+*/
 
 const btnMenu = document.getElementById('btnMenu');
 const btnCerrar = document.getElementById('btnCerrar');
 const sidebar = document.getElementById('sidebar');
-
 const direcciones = document.querySelectorAll('.direc1');
-
-console.log(direcciones);
+const atras = document.getElementById("sidebar-fondo");
 
 btnMenu.addEventListener('click', () => {
     sidebar.classList.add('activo');
+    atras.classList.add('activo');
     btnMenu.classList.add('desactivado');
-    console.log("abrir");
     btnCerrar.classList.add('activado');
-    console.log("abrir2");
+    
 });
 
 btnCerrar.addEventListener('click', () => {
     sidebar.classList.remove('activo');
+    atras.classList.remove('activo');
     btnMenu.classList.remove('desactivado');
-
     btnCerrar.classList.remove('activado');
-    console.log("cerrar");
 });
 
 for (let index = 0; index < direcciones.length; index++) {
-    console.log(direcciones[index]);
     direcciones[index].addEventListener('click', () => {
 
-    
         sidebar.classList.remove('activo');
+        atras.classList.remove('activo');
         btnMenu.classList.remove('desactivado');
-        console.log("enlace");
         btnCerrar.classList.remove('activado');
+
     });
 }
 
@@ -93,8 +104,11 @@ document.querySelectorAll('a[href^="#"]').forEach(enlace => {
 });
 
 
-/* Copiado */
+/*
+Funcion para copiar el contenido una etiqueta en el portapapeles
+*/
 const etiquetasCopiar = document.querySelectorAll('.btn-copiar');
+
 const mostrar = document.querySelector(".notificacion");
 const texto = mostrar.querySelector("p");
 let bandera = null;
@@ -108,6 +122,7 @@ etiquetasCopiar.forEach(boton => {
         }
         
         const textoACopiar = boton.getAttribute('data');
+
         texto.textContent = "copiado";
         mostrar.classList.add('mostrar');
 
@@ -124,9 +139,6 @@ etiquetasCopiar.forEach(boton => {
             }, 2000);
         });
 
-       /*  bandera = setTimeout(() => {
-            mostrar.classList.remove('mostrar');   
-        }, 2000); */
 
     });
 });

@@ -1,6 +1,7 @@
 :root {
     --color-fondo: #0a0c10;
     --color-gris: #17181b;
+    --color-gris-oscuro: #101113;
 }   
 
 * {
@@ -61,7 +62,7 @@ body {
     border-bottom: 1px solid var(--color-gris);
 }
 
-.titulo h1 {
+.titulo div h1 {
     font-size: 1.5em;
     height: 100%;
 }
@@ -193,6 +194,7 @@ body {
 
 .tarjeta p {
     margin-bottom: 10px;
+    font-size: 1em;
 }
 .etiquetas-pro {
     display: flex;
@@ -285,7 +287,7 @@ body {
 
 #Contacto {
     background-color: #151922;
-    scroll-margin-top: 60px;
+    scroll-margin-top: 55px;
     padding: 50px 0px 50px 0px;
     
     display: flex;
@@ -312,7 +314,7 @@ body {
     margin: 0px 0px 20px 0px;
     padding: 0px 10px 0px 10px;
     font-size: 2rem;
-    border-bottom: 3px solid white;
+    border-bottom: 2px solid white;
 }
 
 label{
@@ -460,9 +462,14 @@ select {
     display: none;
 }
 
+
+
 .btn-cerrar {
     display: none;
 }
+
+
+
 @media (max-width: 1119px){
     #Sobre-mi {
         display: flex;
@@ -485,7 +492,7 @@ select {
         padding: 50px 25px 50px 25px;
     }
 
-    .titulo h1 {
+    .titulo div h1 {
         font-size: 1em;
         height: 100%;
     }
@@ -493,6 +500,12 @@ select {
     #perfil {
         height: 250px;
         width: 250px;
+    }
+}
+
+@media (min-width: 720px) {
+    .sidebar-fondo {
+        display: none;
     }
 }
 
@@ -537,8 +550,15 @@ select {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        align-items: center;
         background-color: #0a0c10;
         gap: 10px;
+        height: 56px;    
+    }
+
+    .titulo div h1 {
+        font-size: 1em;
+        height: 100%;
     }
 
     .btn-lateral {
@@ -572,27 +592,46 @@ select {
         position: fixed;
         top: 0;
         right: -400px; 
-        
-        background-color: #041536;
-        transition: left 0.3s ease; 
+        border-radius: 10px;
+        background-color: var(--color-gris); /*#041536*/
         z-index: 1000;
         padding: 20px;
+        opacity: 10;
+        /* transition: transform 1s ease;
+        transform: translate(0px, 0px); */
     }
 
     .sidebar.activo {
         right: 0px;
         inset: 0; 
         margin: 60px auto;
-
         width: 90%;
-        height: 85%;
+        height: 80%;
+    }
+
+    .sidebar-fondo {
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 99;
+            
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .sidebar-fondo.activo {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 
     .btn-cerrar {
         display: none;
         position: fixed;
-        top: 10px;
-        right: 20px;
+        top: 16px;
+        right: 21px;
         background: transparent;
         border: none;
         padding: 0px;
@@ -636,7 +675,7 @@ select {
         display: none;
     }
 
-    .titulo h1 {
+    .titulo div h1 {
         padding: 10px;
     }
     
@@ -697,9 +736,9 @@ select {
     }
 }
 
-/* @media (max-width: 320px){
+@media (max-width: 335px){
     .tarjeta-solas {
-        max-width: 130px;
+        max-width: 140px;
         max-height: 180px;
     }
-} */
+}

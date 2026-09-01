@@ -5,6 +5,9 @@
     <title>Portafolio - Mendez Matias Mauricio</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -21,7 +24,11 @@
     <!-- Seccion de arriba -->
     <header class="cabecera">
         <div class="titulo">
-            <h1>Mendez Matias Mauricio</h1>
+            <div>
+                <h1>Mendez Matias Mauricio</h1>
+
+            </div>
+            
 
             <nav class="direcciones">   
                 <ul>    
@@ -38,9 +45,10 @@
                 <span></span>
             </button>
 
-            
+            <div class="sidebar-fondo" id="sidebar-fondo"></div>
+
             <aside class="sidebar" id="sidebar">
-                <button class="btn-cerrar desactivado" id="btnCerrar">x</button>
+                <button class="btn-cerrar desactivado" id="btnCerrar">X</button>
                 
                 <nav class="direcciones-celular">
                     <ul>
@@ -92,10 +100,6 @@
 
             <article class="tarjeta">
                 <h3>Aleph: Interprete en C</h3>
-                <!-- <p>Aleph es un intérprete de lenguaje de programación creado con herramientas de análisis léxico y sintáctico (Flex y Bison).
-En el proyecto desarrolle la lógica para tipos de datos abstractos complejos (conjunto, lista y elemento), junto con sus operaciones y operadores correspondientes, creando una estructura especial recursiva que encapsula a los tres tipos de datos y creando funciones alrededor de esta.
-Durante el desarrollo lleve a cabo decisiones por etapas organizadas: la parte léxica, el diseño de la sintaxis y al final la implementación de la semántica del lenguaje. El principal desafío fue el diseño de la sintaxis, buscando representar de forma clara las operaciones entre los nuevos tipos de datos.</p>
-                 -->
                 <p>
                     Intérprete de lenguaje desarrollado con herramientas de análisis léxico y sintáctico (Flex y Bison).<br> 
                     Diseñé e implementé la sintaxis, el léxico y la semántica del lenguaje, creando una estructura recursiva personalizada para gestionar tipos de datos abstractos complejos (conjuntos, listas y elementos) y sus operaciones.
@@ -245,7 +249,7 @@ Durante el desarrollo lleve a cabo decisiones por etapas organizadas: la parte l
 
                 <div class="campo">
                     <label for="telefono">Telefono</label>
-                    <input type="text" id="telefono" placeholder="Opcional" name="telefono" >
+                    <input type="number" id="telefono" placeholder="Opcional" name="telefono" >
                 </div>
 
                 <div class="campo asunto">
