@@ -15,13 +15,6 @@ html {
   scroll-behavior: smooth;
 }
 
-#perfil {
-    border-radius: 100%;
-    object-fit: cover;
-    height: 300px;
-    width: 300px;
-}
-
 body {
     background-color: #0a0c10;
     color: #e2e8f0;
@@ -115,9 +108,14 @@ body {
     padding: 5em 1em 5em 1em;
     scroll-margin-top: 80px;
 
-    gap: 10px;
+    gap: 10px;   
+}
 
-    
+#perfil {
+    border-radius: 100%;
+    object-fit: cover;
+    height: 300px;
+    width: 300px;
 }
 
 .contenedor-imagen {
@@ -173,7 +171,6 @@ body {
     padding: 30px;
     border-radius: 5px;
 
-    /* margin: 5vw; */
     /* border: 1px solid #0c0b13;
     border-color: white; */
 
@@ -182,8 +179,7 @@ body {
         #12161d 0%,
         #0f1016cc 75%,
         #0d1014 100%
-    ); */
-    
+    ); */   
 }
 
 .tarjeta h3 {
@@ -205,13 +201,10 @@ body {
 
 .etiquetas-pro span {
     padding: 5px 10px 5px 10px;
-    background-color: #083003; /*#093b02*/
-    
+    background-color: #083003; /*#093b02*/    
 }
 
-/* .tarjeta p {
-    margin-top: 10px;
-} */
+
 /* Tecnologias */
 
 #Tecnologias {
@@ -236,9 +229,7 @@ body {
     border-bottom: 2px solid white;
 }
 
-.lista {
-    display: none;
-}
+
 .tarjetas-juntas {
     display: flex;
     flex-direction: row;
@@ -323,8 +314,6 @@ label{
     margin-bottom: 5px;
     color: white;
     width: 100%;
-    
-    /*modificar*/
 }
 
 input {
@@ -333,17 +322,21 @@ input {
     width: 100%;
     outline: none;
     border: 1.5px solid white; /*#cbd5e0*/
-
-    /*modificar*/
 }
 
 input:focus {
     border-color: #3182ce;
 }
 
-select, textarea {
+textarea {
     width: 100%;
     font-size: 0.95rem;
+}
+
+select {
+    width: 100%;
+    padding: 5px;
+    font-size: 0.95em;
 }
 
 .contac {
@@ -429,11 +422,6 @@ textarea:focus {
     background-color: #0044ff;
 }
 
-select {
-    padding: 5px;
-    font-size: 0.95em;
-}
-
 
 /* Pie de pagina */
 
@@ -461,8 +449,6 @@ select {
 .sidebar {
     display: none;
 }
-
-
 
 .btn-cerrar {
     display: none;
@@ -576,8 +562,7 @@ select {
 
     
 
-    .btn-lateral span {
-        
+    .btn-lateral span {   
         width: 100%;
         height: 2px;
         background-color: #ffffff;
@@ -597,8 +582,6 @@ select {
         z-index: 1000;
         padding: 20px;
         opacity: 10;
-        /* transition: transform 1s ease;
-        transform: translate(0px, 0px); */
     }
 
     .sidebar.activo {
@@ -738,7 +721,7 @@ select {
 
 @media (max-width: 335px){
     .tarjeta-solas {
-        max-width: 140px;
+        max-width: 120px;
         max-height: 180px;
     }
 }

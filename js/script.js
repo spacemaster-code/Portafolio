@@ -39,7 +39,7 @@ formulario.addEventListener("submit", function(e) {
         })
         .finally(() => {
             boton.disabled = false;
-            boton.textContent = 'Enviar';
+            boton.textContent = 'Enviar mensaje';
         });
         telefono.value = "";
         telefono.setCustomValidity("");
