@@ -12,7 +12,7 @@
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -90,8 +90,6 @@ body {
 
 .direcciones ul li a:hover{
     background-color: #07080a;
-    /* padding-bottom: 21px;
-    border-bottom: 3px solid #073592; */
 }
 
 
@@ -170,10 +168,6 @@ body {
     width: 100%;
     padding: 30px;
     border-radius: 5px;
-
-    /* border: 1px solid #0c0b13;
-    border-color: white; */
-
     /* background: radial-gradient(
         circle at center,
         #12161d 0%,
@@ -682,8 +676,7 @@ textarea:focus {
         padding: 30px;
 
         border-radius: 5px;
-        /* border-color: 1px solid white;
-
+        /*
         background: radial-gradient(
             circle at center,                   
             #12161d 0%,         
